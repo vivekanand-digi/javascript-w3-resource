@@ -161,3 +161,104 @@ let arrayIntegers = [1, 2, 3, 4, 5];
 let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]
 let arrayIntegers2 = arrayIntegers.slice(2, 3); // returns [3]
 let arrayIntegers3 = arrayIntegers.slice(4); //returns [5]
+
+//13)What is the purpose of the let keyword
+
+let counter = 30;
+if (counter === 30) {
+    let counter = 31;
+    console.log(counter); // 31
+}
+console.log(counter); // 30 (because the variable in if block won't exist here)
+
+//14)What is the purpose of the delete operator
+
+var user = { name: "John", age: 20 };
+delete user.age;
+
+console.log(user); // {name: "John"}
+
+//15)What is typeof operator
+
+typeof "John Abraham"; // Returns "string"
+typeof (1 + 2); // Returns "number"
+typeof [1, 2, 3] // Returns "object" because all arrays are also objects
+
+//16)How do you access history in javascript
+
+function goBack() {
+    window.history.back();
+}
+function goForward() {
+    window.history.forward();
+}
+
+//17)What is the purpose JSON stringify
+
+var userJSON = { name: "John", age: 31 };
+var userString = JSON.stringify(userJSON);
+console.log(userString); //"{"name":"John","age":31}"
+
+//18)How do you parse JSON string
+
+var userString = '{"name":"John","age":31}';
+var userJSON = JSON.parse(userString);
+console.log(userJSON); // {name: "John", age: 31}
+
+//19)The replace() method
+
+var msg = "Hello vivek";
+var n = msg.replace(/vivek/i, "sai"); // Hello sai
+
+//20) program to count the number of vowels in a string
+
+function countVowel(str) {
+    const count = str.match(/[aeiou]/gi).length;
+    return count;
+}
+
+const string = prompt('Enter a string: ');
+const result = countVowel(string);
+console.log(result);
+
+//21) Write a JavaScript program to capitalize the first letter of each word in a given string.
+
+function letter(str) {
+    str = str.split(" ");
+    for (var i = 0, x = str.length; i < x; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+    return str.join(" ");
+}
+
+//22)Write a JavaScript program to reverse a given string.
+
+function abc(str) {
+    return str.split("").reverse().join("");
+}
+
+//23)Write a JavaScript program to convert letters of a given string alphabetically.
+
+function alp(str) { 
+    return str.split("").sort().join("");       
+}
+
+console.log(alp("Python")); //Phnoty
+
+//24)Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
+
+function sum(nums){
+  return nums[0] + nums[1] + nums[2];
+}
+
+console.log(sum([10, 10, 20]));   //40
+
+//25)Write a JavaScript program to rotate the elements left in a given array of integers of length 3.
+
+function rotate(array){
+    return [array[2], array[1], array[0]];
+}
+
+console.log(rotate([1, 2, 3]));   //3,2,1
+
+
