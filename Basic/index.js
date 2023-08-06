@@ -239,26 +239,167 @@ function abc(str) {
 
 //23)Write a JavaScript program to convert letters of a given string alphabetically.
 
-function alp(str) { 
-    return str.split("").sort().join("");       
+function alp(str) {
+    return str.split("").sort().join("");
 }
 
 console.log(alp("Python")); //Phnoty
 
 //24)Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
 
-function sum(nums){
-  return nums[0] + nums[1] + nums[2];
+function sum(nums) {
+    return nums[0] + nums[1] + nums[2];
 }
 
 console.log(sum([10, 10, 20]));   //40
 
 //25)Write a JavaScript program to rotate the elements left in a given array of integers of length 3.
 
-function rotate(array){
+function rotate(array) {
     return [array[2], array[1], array[0]];
 }
 
 console.log(rotate([1, 2, 3]));   //3,2,1
 
+//26)Occurance of each words inside string
+
+const countWordOccurance = (str) => {
+    const words = str.split(" ");
+    const wordCount = {}
+    for (let word of words) {
+        if (wordCount[word]) {
+            wordCount[word]++
+        } else {
+            wordCount[word] = 1
+        }
+    }
+    console.log(wordCount);
+}
+
+//27)Count the occurances of a Character in a string
+
+countLetterOccurance("aahheeiiiiddzzvvcceedd");
+const countOccuranceOfChar = (str, key) => {
+    return str.split(key).length - 1
+}
+
+//28)countOccuranceOfChar("vivekananda", "a")
+
+const countOccuranceOfCharCustom = (str, key) => {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === key) {
+            count++
+        }
+    }
+    return count;
+}
+
+//29)check Anagram
+
+const checkAnagram = (str1, str2) => {
+    if (str1.length !== str2.length) {
+        return false
+    }
+
+    const sortedStr1 = str1.split("").sort().join("");
+    const sortedStr2 = str2.split("").sort().join("");
+
+    if (sortedStr1 !== sortedStr2) {
+        return false
+    }
+
+    return true;
+}
+
+checkAnagram("listen", "silent");
+
+//30) Remove duplicates
+
+const removeDuplicate = str => {
+    let uniqeStr = "";
+
+    for (let char of str) {
+        if (!uniqeStr.includes(char)) {
+            uniqeStr += char;
+        }
+    }
+    return uniqeStr;
+}
+
+console.log(removeDuplicate("Vivekananda"))
+
+//31)Reverse Words
+
+const reverseWords = str => {
+    let reversedSentence = "";
+    let currentWord = "";
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === ' ') {
+            reversedSentence = currentWord + " " + reversedSentence;
+            currentWord = ''
+        } else {
+            currentWord += str[i]
+        }
+    }
+    reversedSentence = currentWord + " " + reversedSentence;
+
+    return reversedSentence.trim()
+}
+
+console.log(reverseWords("Hello Good Morning"))
+
+//32)Reverse Letters Inside Words
+
+const reverseLettersInsideWords = str => {
+    const words = str.split(' ');
+
+    const reverseStr = word => {
+        return word.split('').reverse().join("");
+    }
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = reverseStr(words[i]);
+    }
+
+    return words.join(" ")
+}
+
+console.log(reverseLettersInsideWords("Hello Good Morning "))
+
+//33)Write a JavaScript program to convert letters of a given string alphabetically.
+
+function alp(str) {
+    return str.split("").sort().join("");
+}
+
+console.log(alp("Python")); //Phnoty
+
+//34) program to find the factorial of a number
+
+function factorial(x) {
+    if (x === 0) {
+        return 1;
+    }
+    else {
+        return x * factorial(x - 1);
+    }
+}
+
+const num = 9;
+
+if (num > 0) {
+    let result = factorial(num);
+    console.log(`The factorial of ${num} is ${result}`);
+}
+
+//35) program to display a text using setTimeout method
+
+function greet() {
+    console.log('Hello world');
+}
+
+setTimeout(greet, 3000);
+console.log('This message is shown first');
 
