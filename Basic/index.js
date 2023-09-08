@@ -403,3 +403,99 @@ function greet() {
 setTimeout(greet, 3000);
 console.log('This message is shown first');
 
+//36) Write a JavaScript function that accepts a string as a parameter 
+//and finds the longest word within the string
+
+function longest(str) {
+    let array1 = str.match(/\w[a-z]{0,}/gi);
+    let result = array1[0];
+
+    for (let x = 1; x < array1.length; x++) {
+        if (result.length < array1[x].length) {
+            result = array1[x];
+        }
+    }
+    return result;
+}
+console.log(longest('Hello good morning'));
+
+//37) Write a JavaScript function to get the function name
+
+function abc() {
+    console.log(arguments.callee.name);
+}
+
+abc();
+
+//38) Write a JavaScript program to find the index of an array item in a for loop
+
+const fruits = ['Apple', 'Banana', 'Graps', 'Mango'];
+for (let [index, item] of fruits.entries()) {
+    console.log(`${index}= ${item}`);
+}
+
+//39)filter method
+{
+    const arr = [5, 1, 3, 2, 6]
+
+    function isOdd(x) {
+        return x % 2;
+    }
+    const output = arr.filter(isOdd);
+    console.log(output)
+
+    function isEven(x) {
+        return x % 2 === 0;
+    }
+    const output1 = arr.filter(isEven);
+    console.log(output1)
+
+    function isGreater(x) {
+        return x > 4;
+    }
+    const output2 = arr.filter(isGreater);
+    console.log(output2)
+
+}
+// 40) adding
+
+const arr = [5, 1, 3, 2, 6];
+
+function findSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+    return sum;
+}
+console.log(findSum(arr)); //17
+
+// OR
+const output = arr.reduce(function (acc, curr) {
+    acc = acc + curr;
+    return acc;
+}, 0);
+console.log(output); //17
+
+//find max
+const output1 = arr.reduce(function (max, curr) {
+    if (curr > max) {
+        max = curr;
+    }
+    return max;
+}, 0);
+console.log(output1);
+
+//using map
+
+const users = [
+    { firstName: "vivek", lastName: "anand", age: 23 },
+    { firstName: "ashis", lastName: "maity", age: 34 },
+    { firstName: "ajeet", lastName: "jha", age: 45 },
+    { firstName: "sai", lastName: "kumar", age: 57 },
+];
+const output4 = users.map((x) => x.firstName + " " + x.lastName);
+console.log(output4); //"vivek anand", "ashis maity", "ajeet jha", "saikumar"
+
+const output5 = users.filter((x) => x.age < 45).map((x) => x.firstName);
+console.log(output5) //"vivek", "ashis"
