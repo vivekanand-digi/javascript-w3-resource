@@ -608,7 +608,7 @@ JSON.parse(localStorage.getItem("persons")) // ['vivek', 'sai', 'abu']
 const obj = {
     name: "vivek",
     age: "23",
-    salary: 1000
+    salary: 100
 }
 
 localStorage.setItem("persons", JSON.stringify(obj))
