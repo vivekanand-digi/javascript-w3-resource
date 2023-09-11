@@ -589,3 +589,32 @@ let number = [1, 2, 3, 4];
 let newNumber = [...number, 5, 6, 7]
 console.log(newNumber) // [1,2,3,4,5,6,7]
 
+//local storage
+localStorage.setItem("name", "vivek")
+localStorage.getItem("name")  //"Vivek"
+
+localStorage.setItem("persons", ["vivek", "sai", "abu"])
+localStorage.getItem("persons") // 'vivek, sai, abu'
+
+localStorage.setItem("name", JSON.stringify("vivek"))
+localStorage.getItem("name") //'"vivek"'
+
+JSON.parse(localStorage.getItem("name")) //'vivek'
+
+localStorage.setItem("persons", JSON.stringify(["vivek", "sai", "abu"]))
+localStorage.getItem("persons") //'["vivek", "sai", "abu"]'
+JSON.parse(localStorage.getItem("persons")) // ['vivek', 'sai', 'abu']
+
+const obj = {
+    name: "vivek",
+    age: "23",
+    salary: 1000
+}
+
+localStorage.setItem("persons", JSON.stringify(obj))
+JSON.parse(localStorage.getItem("persons")) //{name: 'vivek', age: 23, salary: 1000}
+const newObj = JSON.parse(localStorage.getItem("persons"))
+delete newObj.age //true
+delete newObj.salary //true
+
+
