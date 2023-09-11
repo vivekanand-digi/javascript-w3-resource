@@ -477,7 +477,7 @@ const output = arr.reduce(function (acc, curr) {
 }, 0);
 console.log(output); //17
 
-//find max
+// 41)find max
 const output1 = arr.reduce(function (max, curr) {
     if (curr > max) {
         max = curr;
@@ -486,7 +486,7 @@ const output1 = arr.reduce(function (max, curr) {
 }, 0);
 console.log(output1);
 
-//using map
+// 42)using map
 
 const users = [
     { firstName: "vivek", lastName: "anand", age: 23 },
@@ -499,3 +499,37 @@ console.log(output4); //"vivek anand", "ashis maity", "ajeet jha", "saikumar"
 
 const output5 = users.filter((x) => x.age < 45).map((x) => x.firstName);
 console.log(output5) //"vivek", "ashis"
+
+// 43)Write a JavaScript for loop that iterates from 0 to 15. For each iteration,
+// it checks if the current number is odd or even
+
+for (let x = 0; x <= 15; x++) {
+    if (x === 0) {
+        console.log(x + " is even");
+    }
+    else if (x % 2 === 0) {
+        console.log(x + " is even");
+    }
+    else {
+        console.log(x + " is odd");
+    }
+}
+
+
+// 44) Write a JavaScript function to get the number of days in a month.
+
+let days = function (month, year) {
+    return new Date(year, month, 0).getDate();
+};
+console.log(days(1, 2023)); //31
+console.log(days(11, 2023)); //30
+
+// 45)Write a JavaScript function to get the month name from a particular date.
+
+let month = function (date) {
+    list = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return list[date.getMonth()];
+};
+console.log(month(new Date("11/09/2023"))); //November
+
+
